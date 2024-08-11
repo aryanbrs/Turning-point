@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day Counter Introduction</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="intro.css" />
+    <!-- Link to new CSS file -->
+  </head>
+  <body>
+    <div class="intro-container">
+      <h2>Turning Point</h2>
+      <div class="quote-container">
+        <p id="quoteDisplay"></p>
+      </div>
+
+      <div class="settings">
+        <h2>Start a New Journal</h2>
+
+        <form id="journalForm">
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" required />
+          <label for="goalName">Enter the name of your diary (goal):</label>
+          <input type="text" id="goalName" required />
+          <button id="start">Start Journaling</button>
+        </form>
+      </div>
+      <div class="settings" id="continueContainer" style="display: none">
+        <h2>Continue Your Journal</h2>
+        <button id="continueButton">Continue</button>
+      </div>
+    </div>
+    <script src="intro.js"></script>
+  </body>
+</html>

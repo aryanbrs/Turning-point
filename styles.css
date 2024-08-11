@@ -1,0 +1,259 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide the scrollbars on the main page */
+  font-family: "Candara", "Bodoni MT", "Bodoni 72", cursive, sans-serif;
+  background-color: #f0f0f0;
+  height: 100%; /* Ensure the body takes up the full height */
+}
+
+/* Ensure the intro-container takes full height but handles overflow */
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Space between items */
+  height: 100vh;
+  padding: 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding is included in height */
+}
+
+/* Ensure the button stays in view */
+#continueButton {
+  background-color: #33ffdd;
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#continueButton:hover {
+  background-color: #a5ff33;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 20px); /* Added 20px space for padding on both sides */
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: black;
+  flex: 1;
+  font-family: "Brush Script MT", cursive;
+}
+
+.date-time {
+  font-size: 1rem;
+  text-align: right;
+  max-width: 240px; /* Adjusted to fit within the available space */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px; /* Adjusted margin to fit within the header */
+}
+
+/* Main Container */
+.container {
+  padding-left: 10px;
+  width: calc(100% - 10px);
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Grid */
+#grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr); /* 20 boxes at default zoom */
+  grid-gap: 5px;
+  padding-left: 10px;
+  margin-top: 100px; /* Avoid hiding behind the header */
+  margin-right: 20px; /* Add margin to the right to avoid scrollbar overlap */
+  width: calc(100% - 30px); /* Adjust width to account for right margin */
+}
+
+.square {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  aspect-ratio: 1;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.2;
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+.square.red {
+  background-color: #ff6666;
+}
+
+.square.green {
+  background-color: #66ff66;
+}
+
+.square.yellow {
+  background-color: #ffff66;
+}
+
+.square:hover {
+  background-color: #ffffe6; /* Color change on hover */
+}
+
+.square.crossed {
+  position: relative;
+}
+
+.square.crossed::before,
+.square.crossed::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff0000; /* Red color for the cross */
+  transform: rotate(-45deg);
+}
+
+.square.crossed::after {
+  transform: rotate(45deg);
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  max-width: 90vw;
+}
+
+.popup p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.popup textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.popup button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup button.save,
+.popup button.cancel {
+  background-color: #33caff; /* Updated blue color for Save/Cancel button */
+}
+
+.popup button.save:hover,
+.popup button.cancel:hover {
+  background-color: #1e9fff; /* Slightly darker blue for hover effect */
+}
+
+/* Color Options */
+.color-option {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000; /* Black color for choice buttons */
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.color-option .color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.color-option .green {
+  background-color: #66ff66;
+}
+
+.color-option .yellow {
+  background-color: #ffff66;
+}
+
+.color-option .red {
+  background-color: #ff6666;
+}
+
+.color-option .reset {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+.color-option:hover,
+.color-option.selected {
+  transform: scale(1.2);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+.hidden {
+  display: none;
+}

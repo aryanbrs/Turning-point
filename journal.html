@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day Counter & Turning Point</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Journal Page -->
+    <div id="journalPage" class="journal-page">
+      <div class="header">
+        <h1>
+          Each Day Counts, Change Your Lifestyle, You have very less time ->
+        </h1>
+        <div class="date-time">
+          <p id="currentDate"></p>
+          <p id="currentTime"></p>
+          <p id="countdown"></p>
+        </div>
+      </div>
+      <div class="container">
+        <div id="grid"></div>
+      </div>
+      <div id="popup" class="popup hidden">
+        <p>How was your day?</p>
+        <button class="color-option" data-color="green">
+          Good <span class="color-circle green"></span>
+        </button>
+        <button class="color-option" data-color="yellow">
+          Okayish <span class="color-circle yellow"></span>
+        </button>
+        <button class="color-option" data-color="red">
+          Bad <span class="color-circle red"></span>
+        </button>
+        <button class="color-option reset" data-color="reset">
+          Reset <span class="color-circle reset"></span>
+        </button>
+        <div class="journal-container">
+          <h2>Journal Entry for <span id="journal-date"></span></h2>
+          <textarea
+            id="journal-text"
+            rows="10"
+            placeholder="Write about your day..."
+          ></textarea>
+          <button id="save-journal">Save</button>
+          <button id="cancel-journal">Cancel</button>
+        </div>
+      </div>
+      <div id="overlay" class="overlay hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
