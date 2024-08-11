@@ -1,13 +1,3 @@
-Remove Comments - A Comment Remover For Almost Any Language
-Line Comment
-Ex: //
-Escape Symbol
-Ex: \
-Block Comment
-/*
-*/
-Presets: C/C++/C# • PHP • Java • JavaScript • Python • HTML • CSS • SQL • MATLAB • Ruby • Swift
-
 html,
 body {
   margin: 0;
@@ -263,4 +253,3 @@ body {
 .hidden {
   display: none;
 }
-Assumptions: Syntactically correct code • Strings enclosed in single or double quotes • At most 1 redundant escape symbol.
