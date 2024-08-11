@@ -3,15 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const continueContainer = document.getElementById("continueContainer");
   const continueButton = document.getElementById("continueButton");
 
-  // Check if there is an ongoing journal
   const startDate = localStorage.getItem("journalStartDate");
   const endDate = localStorage.getItem("journalEndDate");
-  const goalName = localStorage.getItem("goalName"); // Retrieve the journal name
+  const goalName = localStorage.getItem("goalName"); 
 
   if (startDate && endDate && goalName) {
-    // Show continue button if a journal exists
+
     continueContainer.style.display = "block";
-    // Update the continue button text with the journal name
+
     continueButton.textContent = `Continue "${goalName}"`;
   }
 
@@ -19,19 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     const endDateValue = document.getElementById("endDate").value;
     const startDateValue = new Date().toISOString().split("T")[0];
-    const goalNameValue = document.getElementById("goalName").value; // Get the journal name
+    const goalNameValue = document.getElementById("goalName").value; 
 
-    // Save start and end dates and goal name to localStorage
     localStorage.setItem("journalStartDate", startDateValue);
     localStorage.setItem("journalEndDate", endDateValue);
-    localStorage.setItem("goalName", goalNameValue); // Save the journal name
+    localStorage.setItem("goalName", goalNameValue); 
 
-    // Redirect to the main journaling page
     window.location.href = "journal.html";
   });
 
   continueButton.addEventListener("click", () => {
-    // Redirect to the main journaling page
+
     window.location.href = "journal.html";
   });
 
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     quoteDisplay.textContent = quotes[randomIndex];
   }
 
-  // Change quote every 15 seconds
   setInterval(displayQuote, 15000);
-  displayQuote(); // Initial call to display a quote immediately
+  displayQuote(); 
 });
