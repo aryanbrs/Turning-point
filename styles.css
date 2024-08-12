@@ -5,7 +5,7 @@ body {
   box-sizing: border-box;
   overflow: hidden; 
   font-family: "Candara", "Bodoni MT", "Bodoni 72", cursive, sans-serif;
-  background-color: #2a2e37;
+  background-color: #2a2e37; 
   height: 100%; 
   color: #eceff4; 
 }
@@ -252,4 +252,51 @@ body {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 1024px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  #grid {
+    grid-template-columns: repeat(15, 1fr); 
+  }
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .date-time {
+    font-size: 0.8rem;
+    max-width: 150px;
+  }
+
+  #continueButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  #grid {
+    grid-template-columns: repeat(10, 1fr); 
+  }
+
+  .square {
+    font-size: 0.6rem;
+  }
+
+  .popup {
+    width: 90vw;
+    padding: 20px;
+  }
+
+  .popup p {
+    font-size: 1rem;
+  }
+
+  .popup textarea {
+    height: 150px;
+  }
 }
